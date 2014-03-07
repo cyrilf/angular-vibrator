@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Angular -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+
+    <!-- vibrator -->
+    <script src="../src/vibrator.js"></script>
+
+    <!-- Bootstrap + theme + demo app + font -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="todc-bootstrap.min.css">
+    <script src="demo.js"></script>
+    <link href='demo.css' rel='stylesheet' />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body ng-app="VibratorDemo" ng-controller="VibrationsCtrl">
+    <div class="jumbotron">
+      <h1>Angular Vibrator</h1>
+      <p>Angular Vibrator is an angular wrapper for the <a href="http://www.w3.org/TR/vibration/">vibration API</a></p>
+      <p>
+        <a href="https://github.com/cyrilf/angular-vibrator" class="btn btn-primary btn-lg">
+          <i class="glyphicon glyphicon-download"></i>&nbsp;&nbsp;Download
+        </a>
+        <a href="https://github.com/cyrilf/angular-vibrator" class="btn btn-default btn-lg">
+          <i class="glyphicon glyphicon-random"></i>&nbsp;&nbsp;Fork on GitHub
+        </a>
+      </p>
+    </div>
+
+    <div class="examples">
+      <h2>Examples</h2>
+      <div class="form-group col-xs-4">
+      <label class="control-label">Choose the vibration duration (in ms)</label>
+        <input type="text" ng-model="duration" class="form-control">
+      </div>
+      <div class="btn-group btn-group-justified">
+        <a href="#" class="btn btn-primary btn-lg" ng-click="vibrate(duration)">
+          <i class="glyphicon glyphicon-play"></i> <span>vibrator.</span>vibrate({{duration}})
+        </a>
+        <a href="#" class="btn btn-primary btn-lg" ng-click="vibrateTwice()">
+          <i class="glyphicon glyphicon-forward"></i> <span>vibrator.</span>vibrateTwice()
+        </a>
+        <a href="#" class="btn btn-primary btn-lg" ng-click="stop()"><i class="glyphicon glyphicon-stop"></i> <span>vibrator.</span>stop()</a>
+      </div>
+    </div>
+  </body>
+</html>

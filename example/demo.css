@@ -1,0 +1,61 @@
+body {
+  background-color: #ecf0f1;
+  font-family: 'Open Sans', sans;
+  width: 85%;
+  margin: auto;
+}
+
+.jumbotron {
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+  border: 1px solid whitesmoke;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 7px 20px 17px;
+}
+
+a {
+  color: rgba(149, 165, 166, 1);
+}
+
+a:hover {
+  color: rgba(44, 62, 80, 1);
+}
+
+.jumbotron h1 {
+  color: rgba(52, 73, 94, 1);
+}
+
+.jumbotron small {
+  color: rgba(52, 73, 94, .7);
+}
+
+.btn-primary {
+  background-color: rgba(52, 73, 94, 1);
+  border: 1px solid rgba(44, 62, 80, 1);
+  background-image: -webkit-gradient(linear, 0 100%, 0 0, from(rgba(52, 73, 94, 1)), to(rgba(44, 62, 80, 1)));
+  background-image: -webkit-linear-gradient(rgba(52, 73, 94, 1) 0%, rgba(44, 62, 80, 1) 100%);
+  background-image: -moz-linear-gradient(rgba(52, 73, 94, 1) 0%, rgba(44, 62, 80, 1) 100%);
+  background-image: -o-linear-gradient(rgba(52, 73, 94, 1) 0%, rgba(44, 62, 80, 1) 100%);
+  background-image: linear-gradient(rgba(52, 73, 94, 1) 0%, rgba(44, 62, 80, 1) 100%);
+}
+.btn-primary:hover {
+  background-color: rgba(44, 62, 80, 1);
+  border: 1px solid rgba(44, 62, 80, 1);
+  background-image: -webkit-gradient(linear, 0 100%, 0 0, from(rgba(44, 62, 80, 1)), to(rgba(44, 62, 80, 1)));
+  background-image: -webkit-linear-gradient(rgba(44, 62, 80, 1) 0%, rgba(44, 62, 80, 1) 100%);
+  background-image: -moz-linear-gradient(rgba(44, 62, 80, 1) 0%, rgba(44, 62, 80, 1) 100%);
+  background-image: -o-linear-gradient(rgba(44, 62, 80, 1) 0%, rgba(44, 62, 80, 1) 100%);
+  background-image: linear-gradient(rgba(44, 62, 80, 1) 0%, rgba(44, 62, 80, 1) 100%);
+}
+
+.examples input {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.examples span {
+  color: rgba(189, 195, 199, 1);
+}
