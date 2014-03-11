@@ -1,6 +1,6 @@
 {
   "name": "angular-vibrator",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Angular wrapper for the vibration API.",
   "main": "src/vibrator.js",
   "directories": {

@@ -27,9 +27,6 @@
        *            Private           *
        ********************************/
 
-      // navigator will contain the $window.navigator
-      var navigator;
-
       /**
        * Vibration sequences definition used by the vibrator
        * @type {Object}
@@ -60,7 +57,9 @@
       /********************************
        *       Private constructor    *
        ********************************/
-      function Vibrator() {
+      function Vibrator($window, $rootScope) {
+
+        var navigator = $window.navigator || {};
 
         /**
          * Get the sequences
@@ -80,10 +79,17 @@
 
         /**
          * Either vibration API is supported by the navigator or not
-         * @return {Boolean} is supported
+         * @param  {Object}  navigatorOverride allows you to override the navigator
+         *                                     (only useful for unit testing I guess)
+         * @return {Boolean}                   is supported
          */
-        this.isSupported = function() {
+        this.isSupported = function(navigatorOverride) {
+          navigator = navigatorOverride || navigator;
           var canVibrate = 'vibrate' in navigator || 'mozVibrate' in navigator;
+          if(! canVibrate) {
+            $rootScope.$broadcast('vibrator:unsupportedBrowser');
+          }
+
           return canVibrate;
         };
 
@@ -135,9 +141,8 @@
        *   Returned by the provider   *
        ********************************/
 
-      this.$get = ['$window', function($window) {
-        navigator = $window.navigator || {};
-        return new Vibrator();
+      this.$get = ['$window', '$rootScope', function($window, $rootScope) {
+        return new Vibrator($window, $rootScope);
       }];
     });
 })();

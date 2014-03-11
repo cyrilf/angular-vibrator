@@ -64,9 +64,10 @@ describe('Service: vibrator', function () {
   describe('Vibrator provider tests', function() {
 
     // Instantiate service
-    var vibrator;
-    beforeEach(inject(function (_vibrator_) {
-      vibrator = _vibrator_;
+    var vibrator, $rootScope;
+    beforeEach(inject(function (_vibrator_, _$rootScope_) {
+      vibrator   = _vibrator_;
+      $rootScope = _$rootScope_;
     }));
 
     it('should be defined', function () {
@@ -105,6 +106,37 @@ describe('Service: vibrator', function () {
     });
 
     describe('Functionality testing', function() {
+
+      describe('isSupported functionality', function() {
+
+        beforeEach(function() {
+          spyOn($rootScope, '$broadcast').andCallThrough();
+          $rootScope.$broadcast.reset();
+        });
+
+        it('should return true if the navigator supports the vibration API', function() {
+          var supportedNavigator = { vibrate: true };
+          expect(vibrator.isSupported(supportedNavigator)).toBe(true);
+        });
+
+        it('should not broadcast an error if the navigator supports the vibration API', function() {
+          var supportedNavigator = { vibrate: true };
+          expect(vibrator.isSupported(supportedNavigator)).toBe(true);
+          expect($rootScope.$broadcast).not.toHaveBeenCalled();
+        });
+
+        it('should return false if the navigator doesn\'t supports the vibration API', function() {
+          var unsupportedNavigator = {};
+          expect(vibrator.isSupported(unsupportedNavigator)).toBe(false);
+        });
+
+        it('should broadcast an error if the navigator doesn\'t supports the vibration API', function() {
+          var unsupportedNavigator = {};
+          expect(vibrator.isSupported(unsupportedNavigator)).toBe(false);
+          expect($rootScope.$broadcast).toHaveBeenCalledWith('vibrator:unsupportedBrowser');
+        });
+      });
+
       it('should correctly implement getSequences', function() {
         var sequences = vibrator.getSequences();
         expect(sequences).toBeDefined();

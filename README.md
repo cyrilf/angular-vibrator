@@ -17,13 +17,13 @@ $ npm install angular-vibrator
 
 ## Usage
 
-Include the vibrator as a dependency for your app.
+1 - Include the vibrator as a dependency for your app.
 
 ```js
 angular.module('yourApp', ['angular-vibrator'])
 ```
 
-then use `vibrator` service as a dependency
+2 - Use `vibrator` service as a dependency in your controller
 
 ```js
  .controller('VibrationsCtrl', ['$scope', 'vibrator', function($scope, vibrator){
@@ -32,6 +32,19 @@ then use `vibrator` service as a dependency
      vibrator.vibrate(duration);
    };
  }]);
+```
+
+3 - Bind it to the view (optional)
+
+```html
+  <body ng-app="VibratorDemo" ng-controller="VibrationsCtrl">
+    <!-- some html ... -->
+    <input type="text" ng-model="duration">
+    <button ng-click="vibrate(duration)">
+      Click me (I'll vibrate for {{duration}} ms)
+    </button>
+    <!-- some html ... -->
+  </body>
 ```
 
 ## Configuration
@@ -55,6 +68,22 @@ By default the sequences are already defined. But if you want to change it/adapt
  ```
 
 Checkout the [example](https://github.com/cyrilf/angular-vibrator/tree/master/example) folder for more informations/tips.
+
+## Error Handling
+
+Angular Vibrator includes error handling through broadcast messages sent from the `$rootScope`. This way you can, in your application, easily catch these errors and do whatever you want with it.
+
+Here is how you can implement this:
+
+```js
+ angular.module('yourApp', ['angular-vibrator'])
+   .controller('VibrationsCtrl', ['$scope', function($scope){
+
+     $scope.$on('vibrator:unsupportedBrowser', function() {
+      console.log('Do whatever you want like display a warning on the page');
+     });
+   }]);
+```
 
 ## License
 
