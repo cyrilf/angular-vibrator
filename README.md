@@ -34,6 +34,26 @@ then use `vibrator` service as a dependency
  }]);
 ```
 
+## Configuration
+
+**Choose your own sequences**
+
+By default the sequences are already defined. But if you want to change it/adapt it to your need you can do it easily:
+
+```js
+ angular.module('yourApp', ['angular-vibrator'])
+   .config(['vibratorProvider', function(vibratorProvider) {
+     // Define your own sequences
+     var sequences = {
+       default: 900,
+       twice: [200, 100, 300],
+       long: 2500
+     };
+
+     vibratorProvider.setSequences(sequences);
+  }])
+ ```
+
 Checkout the [example](https://github.com/cyrilf/angular-vibrator/tree/master/example) folder for more informations/tips.
 
 ## License
