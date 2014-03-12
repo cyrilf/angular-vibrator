@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Angular Vibrator by cyrilf</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/cyrilf/angular-vibrator">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/cyrilf/angular-vibrator/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/cyrilf/angular-vibrator/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Angular Vibrator</h1>
+          <p>Angular wrapper for the vibration API</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/cyrilf">cyrilf</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a name="angular-vibrator" class="anchor" href="#angular-vibrator"><span class="octicon octicon-link"></span></a>Angular Vibrator</h1>
+
+<h4>
+<a name="angular-vibrator-is-an-angular-wrapper-for-the-vibration-api" class="anchor" href="#angular-vibrator-is-an-angular-wrapper-for-the-vibration-api"><span class="octicon octicon-link"></span></a>Angular Vibrator is an angular wrapper for the vibration API</h4>
+
+<p>You want to use the <a href="http://www.w3.org/TR/vibration/">vibration API</a> on your Angular application? You're at the right place.</p>
+
+<h2>
+<a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h2>
+
+<p>If you're like me, you're happy when there is some demos.
+<br>
+So, you can <a href="http://cyrilf.github.io/angular-vibrator/example">see Angular Vibrator live</a>.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<h4>
+<a name="via-bower" class="anchor" href="#via-bower"><span class="octicon octicon-link"></span></a>via bower:</h4>
+
+<pre><code>$ bower install angular-vibrator
+</code></pre>
+
+<h4>
+<a name="via-npm" class="anchor" href="#via-npm"><span class="octicon octicon-link"></span></a>via npm:</h4>
+
+<pre><code>$ npm install angular-vibrator
+</code></pre>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>1 - Include the vibrator as a dependency for your app.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'yourApp'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'angular-vibrator'</span><span class="p">])</span>
+</pre></div>
+
+<p>2 - Use <code>vibrator</code> service as a dependency in your controller</p>
+
+<div class="highlight highlight-js"><pre> <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'VibrationsCtrl'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'$scope'</span><span class="p">,</span> <span class="s1">'vibrator'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">vibrator</span><span class="p">){</span>
+
+   <span class="nx">$scope</span><span class="p">.</span><span class="nx">vibrate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">duration</span><span class="p">)</span> <span class="p">{</span>
+     <span class="nx">vibrator</span><span class="p">.</span><span class="nx">vibrate</span><span class="p">(</span><span class="nx">duration</span><span class="p">);</span>
+   <span class="p">};</span>
+ <span class="p">}]);</span>
+</pre></div>
+
+<p>3 - Bind it to the view (optional)</p>
+
+<div class="highlight highlight-html"><pre>  <span class="nt">&lt;body</span> <span class="na">ng-app=</span><span class="s">"VibratorDemo"</span> <span class="na">ng-controller=</span><span class="s">"VibrationsCtrl"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- some html ... --&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">ng-model=</span><span class="s">"duration"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">ng-click=</span><span class="s">"vibrate(duration)"</span><span class="nt">&gt;</span>
+      Click me (I'll vibrate for {{duration}} ms)
+    <span class="nt">&lt;/button&gt;</span>
+    <span class="c">&lt;!-- some html ... --&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+</pre></div>
+
+<h2>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h2>
+
+<p><strong>Choose your own sequences</strong></p>
+
+<p>By default the sequences are already defined. But if you want to change it/adapt it to your need you can do it easily:</p>
+
+<div class="highlight highlight-js"><pre> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'yourApp'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'angular-vibrator'</span><span class="p">])</span>
+   <span class="p">.</span><span class="nx">config</span><span class="p">([</span><span class="s1">'vibratorProvider'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">vibratorProvider</span><span class="p">)</span> <span class="p">{</span>
+     <span class="c1">// Define your own sequences</span>
+     <span class="kd">var</span> <span class="nx">sequences</span> <span class="o">=</span> <span class="p">{</span>
+       <span class="k">default</span><span class="o">:</span> <span class="mi">900</span><span class="p">,</span>
+       <span class="nx">twice</span><span class="o">:</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span>
+       <span class="kr">long</span><span class="o">:</span> <span class="mi">2500</span>
+     <span class="p">};</span>
+
+     <span class="nx">vibratorProvider</span><span class="p">.</span><span class="nx">setSequences</span><span class="p">(</span><span class="nx">sequences</span><span class="p">);</span>
+  <span class="p">}])</span>
+</pre></div>
+
+<p>Checkout the <a href="https://github.com/cyrilf/angular-vibrator/tree/master/example">example</a> folder for more informations/tips.</p>
+
+<h2>
+<a name="error-handling" class="anchor" href="#error-handling"><span class="octicon octicon-link"></span></a>Error Handling</h2>
+
+<p>Angular Vibrator includes error handling through broadcast messages sent from the <code>$rootScope</code>. This way you can, in your application, easily catch these errors and do whatever you want with it.</p>
+
+<p>Here is how you can implement this:</p>
+
+<div class="highlight highlight-js"><pre> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'yourApp'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'angular-vibrator'</span><span class="p">])</span>
+   <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'VibrationsCtrl'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'$scope'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">){</span>
+
+     <span class="nx">$scope</span><span class="p">.</span><span class="nx">$on</span><span class="p">(</span><span class="s1">'vibrator:unsupportedBrowser'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Do whatever you want like display a warning on the page'</span><span class="p">);</span>
+     <span class="p">});</span>
+   <span class="p">}]);</span>
+</pre></div>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Licensed under the MIT license</p>
+
+<p><a href="http://cyrilf.com">Cyril F - Web developer</a></p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-18914788-9");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
