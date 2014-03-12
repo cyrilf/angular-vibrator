@@ -1,6 +1,6 @@
 {
   "name": "angular-vibrator",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Angular wrapper for the vibration API.",
   "main": "src/vibrator.js",
   "directories": {
@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/cyrilf/angular-vibrator/issues"
   },
-  "homepage": "",
+  "homepage": "http://cyrilf.github.io/angular-vibrator/",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.7.1",

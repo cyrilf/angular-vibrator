@@ -4,6 +4,12 @@
 
 You want to use the [vibration API](http://www.w3.org/TR/vibration/) on your Angular application? You're at the right place.
 
+## Demo
+
+If you're like me, you're happy when there is some demos.
+<br>
+So, you can [see Angular Vibrator live](http://cyrilf.github.io/angular-vibrator/example).
+
 ## Installation
 
 #### via bower:

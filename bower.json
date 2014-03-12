@@ -1,7 +1,7 @@
 {
   "name": "angular-vibrator",
   "description": "Angular wrapper for the vibration API.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": ["src/vibrator.js"],
   "license": "MIT",
   "dependencies": {
@@ -24,7 +24,7 @@
   "authors": [
     { "name": "Cyril F", "email": "cyrilf7x@gmail.com", "homepage": "http://cyrilf.com" }
   ],
-  "homepage": "",
+  "homepage": "http://cyrilf.github.io/angular-vibrator/",
   "repository": {
     "type": "git",
     "url": "git://github.com/cyrilf/angular-vibrator.git"
