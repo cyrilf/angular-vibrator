@@ -8,7 +8,7 @@ You want to use the [vibration API](http://www.w3.org/TR/vibration/) on your Ang
 
 If you're like me, you're happy when there is some demos.
 <br>
-So, you can [see Angular Vibrator live](http://cyrilf.github.io/angular-vibrator/example).
+So, you can [see Angular Vibrator live](http://angular-vibrator.cyrilf.com/).
 
 ## Installation
 
