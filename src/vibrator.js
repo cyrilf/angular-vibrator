@@ -59,7 +59,7 @@
        ********************************/
       function Vibrator($window, $rootScope) {
 
-        var navigator = $window.navigator || {};
+        var navigator = $window.navigator || {};
 
         /**
          * Get the sequences
