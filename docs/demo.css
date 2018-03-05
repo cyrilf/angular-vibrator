@@ -49,6 +49,7 @@ a:hover {
   background-image: -moz-linear-gradient(rgba(44, 62, 80, 1) 0%, rgba(44, 62, 80, 1) 100%);
   background-image: -o-linear-gradient(rgba(44, 62, 80, 1) 0%, rgba(44, 62, 80, 1) 100%);
   background-image: linear-gradient(rgba(44, 62, 80, 1) 0%, rgba(44, 62, 80, 1) 100%);
+  cursor: pointer;
 }
 
 .examples input {
